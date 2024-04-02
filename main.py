@@ -5,7 +5,7 @@ def main():
     file_contents = find_book(book_path)
 
 
-    report(word_count(file_contents),letter_count(file_contents))
+    report(word_count(file_contents),letter_count(file_contents),book_path)
 
 def find_book(book_path):
     try:
@@ -34,9 +34,9 @@ def letter_count(file_contents):
     return letters_dict
 
 
-def report(word_count,letter_count):
+def report(word_count,letter_count,book_path):
 
-    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"--- Begin report of {book_path} ---")
     print(f"{word_count} words found in the document")
     for key, value in letter_count.items():
         if key.isalpha():
